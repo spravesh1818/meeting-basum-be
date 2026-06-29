@@ -28,7 +28,7 @@ authController.post('/register', validateRegisterRequest, async (req, res) => {
         console.log("Registering...");
         const { name, email, password } = req.body;
         const user = await register(name, email, password);
-        res.json({
+        res.status(201).json({
             message: 'Register successful',
             data: user
         })
